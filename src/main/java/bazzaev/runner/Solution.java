@@ -10,19 +10,19 @@ import java.util.List;
 import static java.lang.Integer.MAX_VALUE;
 
 public class Solution {
-    private static final List <String> words = Arrays.asList("S", "W", "T", "P");
-    private static final List <String> races = Arrays.asList("human", "swamper", "woodman");
+    private static final List <String> WORDS = Arrays.asList("S", "W", "T", "P");
+    private static final List <String> RACES = Arrays.asList("human", "swamper", "woodman");
 
     public static Integer getResult(String playingField, String race) {
         if(playingField.length() != 16){
             throw new RuntimeException("Неверное количество символов");
         }
         for (int i = 0; i < playingField.length(); i++) {
-            if(!words.contains(String.valueOf(playingField.toUpperCase().charAt(i)))){
+            if(!WORDS.contains(String.valueOf(playingField.toUpperCase().charAt(i)))){
                 throw new RuntimeException("Некорректно введенные данные");
             }
         }
-        if(!races.contains(race.toLowerCase())){
+        if(!RACES.contains(race.toLowerCase())){
             throw new RuntimeException("Некорректно введенна расса");
         }
 
